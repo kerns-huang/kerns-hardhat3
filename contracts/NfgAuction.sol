@@ -125,7 +125,6 @@ contract NfgAuction is Initializable, UUPSUpgradeable {
         Auction storage auction = auctions[auctionId];
         require(!auction.ended, "auction already ended");
         require(auction.highestBidder != address(0), "no highest bidder");
-        require(auction.highestBidToken != address(0), "no highest bid token");
         require(auction.highestBidUsd > 0, "no highest bid usd");
         require(auction.highestBidTokenCount > 0, "no highest bid token count");
         auction.ended = true;

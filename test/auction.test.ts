@@ -34,7 +34,7 @@ describe("NfgAuction", function () {
     it("should run once and set admin", async function () {
       const auction2 = await ethers.deployContract("NfgAuction");
       await auction2.initialize();
-      await expect(auction2.initialize()).to.be.reverted;
+      await expect(auction2.initialize()).to.be.revertedWithCustomError(auction2, "InvalidInitialization");
     });
   });
 
