@@ -1,9 +1,12 @@
+import "dotenv/config";
 import hardhatToolboxMochaEthersPlugin from "@nomicfoundation/hardhat-toolbox-mocha-ethers";
 import { configVariable, defineConfig } from "hardhat/config";
-
 export default defineConfig({
   plugins: [hardhatToolboxMochaEthersPlugin],
   solidity: {
+    npmFilesToBuild: [
+      "@openzeppelin/contracts/proxy/ERC1967/ERC1967Proxy.sol",
+    ],
     profiles: {
       default: {
         version: "0.8.28",
